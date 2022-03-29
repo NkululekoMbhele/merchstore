@@ -1,0 +1,550 @@
+.checkout-confirmation {
+  width: 100vw;
+  min-height: 80vh;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.checkout-confirmation .progress-bar {
+  display: flex;
+  align-items: center;
+}
+.checkout-confirmation .progress-bar p {
+  color: #e1e1e1;
+  font-weight: 500;
+  font-size: 12px;
+}
+.checkout-confirmation .progress-bar .seperator {
+  width: 50px;
+  height: 0px;
+  border: none;
+  border-top: 1px solid #bdbdbd;
+  margin: 0 15px;
+}
+.checkout-confirmation .progress-bar .active {
+  color: #004d96;
+}
+.checkout-confirmation .new-project-card {
+  margin: 2rem 0;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.checkout-confirmation .new-project-card .project-card-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.checkout-confirmation .new-project-card .project-card-header h5 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+}
+.checkout-confirmation .new-project-card .new-project-card-body {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item {
+  width: 100%;
+  height: 5rem;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  border: 1px solid whitesmoke;
+  display: flex;
+  margin-bottom: 15px;
+  position: relative;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-thumbnail {
+  flex: 1;
+  padding: 0.2rem 0.3rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: white;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-thumbnail .thumb {
+  width: 80%;
+  height: auto;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-info {
+  flex: 5;
+  padding: 0.8rem;
+  height: 100%;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-info h3 {
+  font-size: 0.8rem;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-info .order-data {
+  display: flex;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-info .order-data .left p {
+  font-size: 0.8rem;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .cart-list-item .item-info .order-data .left p span {
+  font-weight: 600;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .item-price {
+  flex: 1;
+  color: #0066ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  align-items: flex-end;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .item-price > p {
+  color: #272727;
+  font-weight: bold;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .item-price .count-right {
+  color: #272727;
+  font-weight: bold;
+  display: flex;
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 500;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .item-price .count-right p .decrement {
+  padding: 1px 6px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid #eee;
+  margin: 0 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .item-price .count-right p .count {
+  padding: 1px 8px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .item-price .count-right p .increment {
+  cursor: pointer;
+  padding: 1px 6px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid #eee;
+  margin: 0 0 0 5px;
+  background-color: #fff;
+}
+.checkout-confirmation .new-project-card .new-project-card-body .cart-list .delete-icon {
+  font-size: 1rem;
+  position: absolute;
+  cursor: pointer;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9d9d9d;
+}
+.checkout-confirmation .new-project-card .project-card-footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.checkout-confirmation .new-project-card .project-card-footer .card-nav-btn {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 20px;
+  background-color: #007bda;
+  border: none;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.checkout-delivery {
+  width: 100vw;
+  min-height: 80vh;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.checkout-delivery .progress-bar {
+  display: flex;
+  align-items: center;
+}
+.checkout-delivery .progress-bar p {
+  color: #e1e1e1;
+  font-weight: 500;
+  font-size: 12px;
+}
+.checkout-delivery .progress-bar .seperator {
+  width: 50px;
+  height: 0px;
+  border: none;
+  border-top: 1px solid #bdbdbd;
+  margin: 0 15px;
+}
+.checkout-delivery .progress-bar .active {
+  color: #004d96;
+}
+.checkout-delivery .new-project-card {
+  margin: 2rem 0;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.checkout-delivery .new-project-card .project-card-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.checkout-delivery .new-project-card .project-card-header h5 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+}
+.checkout-delivery .new-project-card .new-project-card-body {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+.checkout-delivery .new-project-card .new-project-card-body .free-delivery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.checkout-delivery .new-project-card .new-project-card-body .free-delivery .delivery-near-uct {
+  color: #0388b1;
+  background-color: #f8f8f8;
+  border: 1px solid #0388b1;
+  padding: 0.8rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 65%;
+}
+.checkout-delivery .new-project-card .new-project-card-body .free-delivery .delivery-amount {
+  color: #0388b1;
+  background-color: #f8f8f8;
+  text-align: center;
+  border: 1px solid #0388b1;
+  padding: 0.8rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  width: 65%;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .registered-address {
+  width: 65%;
+  margin: 10px;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .registered-address h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .registered-address .table {
+  border: 1px solid #30303043;
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .registered-address .table tr {
+  font-size: 0.8rem;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .registered-address .table tr .key {
+  padding-right: 20px;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .registered-address .table tr .value {
+  font-weight: 600;
+  margin-left: 50px;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .address-nav {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .address-nav .btn {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: #007bda;
+  background-color: #f0f0f0;
+  font-size: 0.65rem;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid #007bda;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .address-nav .btn.selected {
+  border: 1px solid rgba(248, 248, 248, 0.898);
+  color: rgba(245, 245, 245, 0.967);
+  background-color: rgba(1, 213, 132, 0.713);
+  pointer-events: none;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .address-nav .btn.disabled {
+  border: 1px solid rgba(196, 196, 196, 0.392);
+  color: rgba(187, 187, 187, 0.213);
+  background-color: rgba(230, 230, 230, 0.713);
+  pointer-events: none;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .enter-delivery-address {
+  width: 65%;
+  transition: all 0.2s ease;
+}
+.checkout-delivery .new-project-card .new-project-card-body .address-info .enter-delivery-address.hide {
+  display: none;
+}
+.checkout-delivery .new-project-card .project-card-footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.checkout-delivery .new-project-card .project-card-footer .card-nav-btn {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 20px;
+  background-color: #007bda;
+  border: none;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.checkout-payment {
+  width: 100vw;
+  min-height: 80vh;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.checkout-payment .progress-bar {
+  display: flex;
+  align-items: center;
+}
+.checkout-payment .progress-bar p {
+  color: #e1e1e1;
+  font-weight: 500;
+  font-size: 12px;
+}
+.checkout-payment .progress-bar .seperator {
+  width: 50px;
+  height: 0px;
+  border: none;
+  border-top: 1px solid #bdbdbd;
+  margin: 0 15px;
+}
+.checkout-payment .progress-bar .active {
+  color: #004d96;
+}
+.checkout-payment .new-project-card {
+  margin: 2rem 0;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.checkout-payment .new-project-card .project-card-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.checkout-payment .new-project-card .project-card-header h5 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+}
+.checkout-payment .new-project-card .new-project-card-body {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+.checkout-payment .new-project-card .project-card-footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex: 1;
+}
+.checkout-payment .new-project-card .project-card-footer .card-nav-btn {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 20px;
+  background-color: #007bda;
+  border: none;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.checkout-payment .new-project-card .project-card-footer .card-nav-btn:hover {
+  background-color: #003e6d;
+}
+
+.checkout-successful {
+  width: 100vw;
+  min-height: 80vh;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.checkout-successful .progress-bar {
+  display: flex;
+  align-items: center;
+}
+.checkout-successful .progress-bar p {
+  color: #e1e1e1;
+  font-weight: 500;
+  font-size: 12px;
+}
+.checkout-successful .progress-bar .seperator {
+  width: 50px;
+  height: 0px;
+  border: none;
+  border-top: 1px solid #bdbdbd;
+  margin: 0 15px;
+}
+.checkout-successful .progress-bar .active {
+  color: #004d96;
+}
+.checkout-successful .new-project-card {
+  margin: 2rem 0;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.checkout-successful .new-project-card .project-card-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.checkout-successful .new-project-card .project-card-header h5 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+}
+.checkout-successful .new-project-card .new-project-card-body {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  align-items: center;
+}
+.checkout-successful .new-project-card .new-project-card-body > h4 {
+  padding: 10px 30px;
+  color: #00cc55;
+  border-radius: 5px;
+  border: 1px solid #00cc55;
+}
+.checkout-successful .new-project-card .new-project-card-body .thank-you {
+  width: 50%;
+  font-size: 11px;
+  text-align: center;
+  margin: 20px 0;
+}
+.checkout-successful .new-project-card .new-project-card-body .order-info {
+  margin: 15px 0;
+  width: 60%;
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #ebebeb;
+}
+.checkout-successful .new-project-card .new-project-card-body .order-info .order-id p {
+  font-size: 0.9rem;
+}
+.checkout-successful .new-project-card .new-project-card-body .order-info .order-id h4 {
+  font-size: 1.4rem;
+}
+.checkout-successful .new-project-card .new-project-card-body .order-info .track-order {
+  font-size: 0.8rem;
+}
+.checkout-successful .new-project-card .new-project-card-body .continue-shopping {
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: #007bda;
+  border: none;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.checkout-successful .new-project-card .project-card-footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex: 1;
+}
+.checkout-successful .new-project-card .project-card-footer .card-nav-btn {
+  width: 8rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 20px;
+  background-color: #007bda;
+  border: none;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}/*# sourceMappingURL=Checkout.style.css.map */

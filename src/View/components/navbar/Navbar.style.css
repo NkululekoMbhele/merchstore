@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.left-parts {
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.logo-nav {
+  display: flex;
+  align-items: center;
+}
+
+.user-container {
+  position: relative;
+  z-index: 20;
+}
+.user-container .user-tab {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #fff;
+  right: 0;
+  top: 1.8rem;
+  width: 12rem;
+  min-height: 8rem;
+  transition: all 0.1s;
+  padding-top: 1.5rem;
+}
+.user-container .user-tab .user-links {
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.user-container .user-tab .user-links:hover {
+  background-color: #e1e1e1;
+}
+.user-container .user-tab-closed {
+  opacity: 0;
+  display: none;
+}
+
+.cart-container {
+  z-index: 20;
+}
+.cart-container .cart-tab {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 2px -1px 11px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 2px -1px 11px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 2px -1px 11px 0px rgba(0, 0, 0, 0.15);
+  right: 0;
+  top: 1.8rem;
+  width: 18rem;
+  min-height: 10rem;
+  transition: all 0.1s;
+  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+}
+.cart-container .cart-tab .cart-links {
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.cart-container .cart-tab .cart-links:hover {
+  background-color: #e1e1e1;
+}
+.cart-container .cart-tab-closed {
+  opacity: 0;
+  display: none;
+}
+
+.cart-items-container .cart-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  height: 50px;
+}
+.cart-items-container .cart-item .product-image {
+  height: 50px;
+  width: 50px;
+}
+.cart-items-container .cart-item .product-name {
+  font-size: 0.9rem;
+  margin-left: 0.6rem;
+  color: #003566;
+}
+.cart-items-container .cart-item .delete-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+.cart-items-container .cart-item .delete-price .delete-icon {
+  font-size: 0.8rem;
+  color: #242424;
+}
+.cart-items-container .cart-item .delete-price .product-price {
+  font-size: 1rem;
+}
+
+.cart-tab .btn-cart {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.cart-tab .btn-cart .btn {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #003566;
+  color: #fff;
+  border-radius: 5px;
+  width: 45%;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+.cart-tab .btn-cart .btn .btn-icon {
+  margin-right: 0.5rem;
+}
+
+.cart-tab .total {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  position: relative;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+.cart-tab .total h3 {
+  color: #1d1d1d;
+  font-size: 1rem;
+}
+.cart-tab .total::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #949494;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cart-tab .total::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #949494;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.right-parts-links {
+  display: flex;
+}
+.right-parts-links .nav-login {
+  text-decoration: none;
+  color: #1d1d1d;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.right-parts-links .nav-register {
+  font-size: 18px;
+  margin-right: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #1d1d1d;
+}
+.right-parts-links .user {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.right-parts-links .cart-container {
+  position: relative;
+  cursor: pointer;
+}
+.right-parts-links .cart-container .cart-count {
+  position: absolute;
+  top: -12px;
+  right: -15px;
+  background-color: #FFD300;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.sidebar-links {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  color: #272727;
+}
+.sidebar-links a {
+  color: #272727;
+  text-decoration: none;
+}
+.sidebar-links .top-links {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-links .top-links .side-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.8rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+.sidebar-links .top-links .side-link:hover {
+  background-color: #e8e8e8;
+}
+.sidebar-links .top-links .category {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar-links .top-links .category .chevron-right {
+  justify-content: flex-end;
+}
+.sidebar-links .top-links .side-cart {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.8rem;
+  height: 2.5rem;
+  align-items: center;
+}
+.sidebar-links .top-links .side-cart .cart {
+  color: #003566;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+.sidebar-links .top-links .side-cart span {
+  font-size: 1.2rem;
+}
+.sidebar-links .top-links .side-cart .right {
+  font-size: 1.2rem;
+}
+.sidebar-links .bottom-links {
+  padding: 1.8rem;
+  justify-self: flex-end;
+}
+.sidebar-links .bottom-links .login {
+  margin-right: 1.8rem;
+  background-color: #003566;
+  color: #fff;
+  padding: 0.2rem 0.8rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+.sidebar-links .bottom-links .login .user {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.sidebar-links .bottom-links .register {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-login {
+    display: none;
+  }
+
+  .nav-register {
+    display: none;
+  }
+
+  .cart-container {
+    position: relative;
+  }
+  .cart-container .cart-count {
+    position: absolute;
+    top: -12px;
+    right: -15px;
+    background-color: #FFD300;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .sidebar-links {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    color: #272727;
+  }
+}
+.category-menu {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.category-menu h2 {
+  font-size: 1.2rem;
+  padding: 1rem 0.8rem;
+  color: #003566;
+}
+.category-menu h2 .icon {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+.category-menu .categories-list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+.category-menu .categories-list-item:hover {
+  background-color: #e8e8e8;
+}
+
+.subcategory-menu {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.subcategory-menu h2 {
+  font-size: 1.2rem;
+  padding: 1rem 0.8rem;
+  color: #003566;
+}
+.subcategory-menu h2 .icon {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+.subcategory-menu .subcategories-list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+.subcategory-menu .subcategories-list-item:hover {
+  background-color: #e8e8e8;
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-20%);
+}
+
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 0.2s ease;
+}
+
+.menu-primary-exit {
+  position: absolute;
+}
+
+.menu-primary-exit-active {
+  transform: translateX(-20%);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.menu-secondary-enter {
+  transform: translateX(20%);
+}
+
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all 0.2s ease;
+}
+
+.menu-secondary-exit {
+  transform: translateX(0%);
+}
+
+.menu-secondary-exit-active {
+  transform: translateX(0%);
+  transition: all 0.3s ease;
+}/*# sourceMappingURL=Navbar.style.css.map */

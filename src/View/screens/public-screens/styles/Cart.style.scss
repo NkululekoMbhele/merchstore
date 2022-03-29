@@ -1,0 +1,157 @@
+.cart-page-container {
+    padding: 2rem 20vw;
+    .cart-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem 0;
+        .cart-list-item {
+            width: 100%;
+            height: 6rem;
+            background-color: rgb(245, 245, 245);
+            border-radius: 0.5rem;
+            border: 1px solid rgb(245, 245, 245);
+            display: flex;
+            margin-bottom: 15px;
+            position: relative;
+            .item-thumbnail {
+                flex: 1;
+                padding: 0.2rem 0.3rem;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                place-items: center;
+                background-color: rgb(255, 255, 255);
+                .thumb {
+                    width: 80%;
+                    height: auto;
+                }
+            }
+            .item-info {
+                flex: 5;
+                padding: 0.8rem;
+                height: 100%;
+                h3 {
+                    font-size: 1.2rem;
+                }
+                .order-data {
+                    display: flex;
+                    .left {
+                        p {
+                            font-size: 0.8rem;
+                            span {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .item-price {
+            flex: 1;
+            color: rgb(0, 102, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 1rem 1rem 1rem 0;
+            align-items: flex-end;
+            >p {
+                color: rgb(39, 39, 39);
+                font-weight: bold;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+            .count-right {
+                color: rgb(39, 39, 39);
+                font-weight: bold;
+                display: flex;
+                margin-top: auto;
+                font-size: 15px;
+                font-weight: 500;
+                p {
+                    .decrement {
+                        padding: 1px 6px;
+                        font-weight: 600;
+                        font-size: 15px;
+                        border: 1px solid #eee;
+                        margin: 0 5px;
+                        background-color: #fff;
+                        cursor: pointer;
+                    }
+                    .count {
+                        padding: 1px 8px;
+                        font-weight: 600;
+                        font-size: 12px;
+                        border: 1px solid #eee;
+                        background-color: #fff;
+                    }
+                    .increment {
+                        cursor: pointer;
+                        padding: 1px 6px;
+                        font-weight: 600;
+                        font-size: 15px;
+                        border: 1px solid #eee;
+                        margin: 0 0 0 5px;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+        .delete-icon {
+            font-size: 1rem;
+            position: absolute;
+            cursor: pointer;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(157, 157, 157);
+        }
+    }
+}
+
+.checkout {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .total-amount {
+        h5 {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        h3 {
+            color: rgb(0, 102, 255);
+        }
+    }
+    .checkout-btn {
+        padding: 0.5rem 2rem;
+        background-color: rgb(0, 102, 255);
+        display: grid;
+        place-items: center;
+        border-radius: 0.5rem;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.2s ease-in;
+        &:hover {
+            background-color: rgb(0, 73, 182);
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cart-page-container {
+        padding: 2rem 5vw;
+        .checkout-btn {
+            padding: 0.3rem 2rem !important;
+            background-color: rgb(0, 102, 255);
+            display: grid;
+            place-items: center;
+            border-radius: 0.5rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem !important;
+        }
+    }
+}

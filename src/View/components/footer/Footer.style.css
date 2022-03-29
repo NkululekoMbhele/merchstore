@@ -1,0 +1,107 @@
+.footer {
+  background-color: #001D3D;
+  color: #fff;
+  width: 100vw;
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem 0 0.8rem 0;
+}
+.footer .useful-links {
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+.footer .useful-links h4 {
+  color: #FFD60A;
+}
+.footer .useful-links .links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.6rem;
+  margin-top: 10px;
+  width: 45%;
+}
+.footer .useful-links .links .link-item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 0.6rem;
+  color: #fff;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.footer .useful-links .links .link-item:hover {
+  text-decoration: underline;
+}
+.footer .follow-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+.footer .follow-us h4 {
+  color: #FFD60A;
+  padding: 0.5rem 0.5rem;
+}
+.footer .follow-us .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200%;
+}
+.footer .follow-us .social-links a .icon {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+.footer .follow-us .social-links a .icon:hover {
+  color: #ffe562;
+}
+.footer .association-companies {
+  background-color: #e1e1e1;
+  width: 100%;
+  height: 8rem;
+  margin: 1.1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .association-companies img {
+  height: 100px;
+  width: auto;
+}
+.footer #copyright {
+  font-size: 0.8rem;
+}
+.footer #copyright a {
+  color: #FFD60A;
+}
+
+@media only screen and (max-width: 1024px) {
+  .association-companies img {
+    height: 80px !important;
+    width: auto;
+  }
+
+  #copyright {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .association-companies {
+    height: 5rem !important;
+  }
+  .association-companies img {
+    height: 50px !important;
+    width: auto;
+  }
+
+  #copyright {
+    font-size: 0.6rem !important;
+  }
+}/*# sourceMappingURL=Footer.style.css.map */

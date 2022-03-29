@@ -1,0 +1,1 @@
+.cards-container-top{display:flex}.cards-container-bottom{display:flex}@media only screen and (max-width: 768px){.cards-container-top{flex-direction:column}.cards-container-bottom{flex-direction:column}}

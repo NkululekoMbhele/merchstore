@@ -1,0 +1,11 @@
+.merch-container {
+    padding: 2rem 10vw;
+    .merch-list {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 30px 0;
+        justify-content: center;
+    }
+}

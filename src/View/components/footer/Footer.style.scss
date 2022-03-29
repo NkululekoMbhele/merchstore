@@ -1,0 +1,108 @@
+.footer {
+    background-color: #001D3D;
+    color: #fff;
+    width: 100vw;
+    min-height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem 0 0.8rem 0;
+    .useful-links {
+        text-align: center;
+        display: grid;
+        place-items: center;
+        h4 {
+            color: #FFD60A;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0.6rem;
+            margin-top: 10px;
+            width: 45%;
+            .link-item {
+                width: fit-content;
+                padding: 0.5rem 0.6rem;
+                color: #fff;
+                line-height: 1.3;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .follow-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem 0;
+        h4 {
+            color: #FFD60A;
+            padding: 0.5rem 0.5rem;
+        }
+        .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 200%;
+            a {
+                .icon {
+                    color: #fff;
+                    font-size: 1.5rem;
+                    transition: all 0.2s;
+                    &:hover {
+                        color: #ffe562;
+                    }
+                }
+            }
+        }
+    }
+    .association-companies {
+        background-color: #e1e1e1;
+        width: 100%;
+        height: 8rem;
+        margin: 1.1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 100px;
+            width: auto;
+        }
+    }
+    #copyright {
+        font-size: 0.8rem;
+        a {
+            color: #FFD60A;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .association-companies {
+        img {
+            height: 80px !important;
+            width: auto;
+        }
+    }
+    #copyright {
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .association-companies {
+        height: 5rem !important;
+        img {
+            height: 50px !important;
+            width: auto;
+        }
+    }
+    #copyright {
+        font-size: 0.6rem !important;
+    }
+}

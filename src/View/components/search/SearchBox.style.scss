@@ -1,0 +1,81 @@
+.search-box {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    .search-input {
+        width: 60vw;
+        padding: 0.5rem 0.6rem;
+        outline: none;
+        border: 1px solid rgb(124, 124, 124);
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+        border-right: none;
+    }
+    #search-category {
+        padding: 0.5rem 0.6rem;
+        width: 20rem;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        box-sizing: border-box;
+        outline: none;
+        line-height: 1.1;
+        cursor: pointer;
+    }
+    .search-btn-container {
+        padding: 0.5rem 0.6rem;
+        background-color: #003566;
+        display: grid;
+        place-items: center;
+        width: 5rem;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+        .search-btn {
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .search-box {
+        width: 100%;
+        height: 2rem;
+        display: flex;
+        .search-input {
+            width: 60vw;
+            padding: 0.5rem 0.6rem;
+            outline: none;
+            border: 1px solid rgb(124, 124, 124);
+            border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+            border-right: none;
+        }
+        #search-category {
+            padding: 0.2rem 0.4rem;
+            width: 15rem;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            box-sizing: border-box;
+            outline: none;
+            font-size: 12px;
+            line-height: 1.1;
+            cursor: pointer;
+        }
+        .search-btn-container {
+            padding: 0.5rem 0.6rem;
+            background-color: #003566;
+            display: grid;
+            place-items: center;
+            width: 5rem;
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+            cursor: pointer;
+            .search-btn {
+                font-size: 15px;
+                color: #fff;
+            }
+        }
+    }
+}
