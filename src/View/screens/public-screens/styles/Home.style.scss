@@ -9,3 +9,17 @@
         justify-content: center;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .merch-container {
+        padding: 1rem 2vw;
+        .merch-list {
+            width: 100%;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            justify-content: center;
+        }
+    }
+}

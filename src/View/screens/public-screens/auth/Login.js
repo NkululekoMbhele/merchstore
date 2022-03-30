@@ -37,7 +37,8 @@ function Login(props) {
   })
   useEffect(() => {
     if (!!currentUser) {
-        navigate(`${location.state.from.pathname}`)
+        navigate("account")
+        // navigate(`${location.state.from.pathname}`)
     }
   }, [currentUser])
 
@@ -58,7 +59,7 @@ function Login(props) {
       console.log("signed-in")
       console.log(user.uid)
       addCartSession(user.uid)
-      navigate(`${location.state.from.pathname}`)
+      navigate("/account")
     })
     .catch((error) => {
       const errorCode = error.code;

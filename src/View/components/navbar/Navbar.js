@@ -28,11 +28,11 @@ import {
 
 import { cartCount } from "../../../Store";
 import { Context } from "../../../Provider";
-import {db} from "../../../Model/setup/firebase"
+import { db } from "../../../Model/setup/firebase"
 import { categories } from "../../../Model/data/Categories";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import {AuthContext} from '../../../AuthProvider';
-
+import { AuthContext } from '../../../AuthProvider';
+import Loader from "../../../Controller/Loader"
 
 const Navbar = ({ cartCount }) => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -42,7 +42,13 @@ const Navbar = ({ cartCount }) => {
 
   const [isUserTabShown, setIsUserTabShown] = useState(false);
   const [isCartTabShown, setIsCartTabShown] = useState(false);
-
+  const [products, setProducts] = useState([])
+  const [totalAmount, setTotalAmount] = useState(0)
+  const [productInfo, setProductInfo] = useState([])
+  const [cartChange, setCartChange] = useState(false)
+  
+  const componentMounted = useRef(true);
+  const [loading, setLoading] = useState(true)
   const [state, dispatch] = useContext(Context);
   const currentUser = useContext(AuthContext);
 
@@ -57,14 +63,47 @@ const Navbar = ({ cartCount }) => {
       });
     }
   }
+  async function fecthData(data) {
+    let tempProducts = []
+    for (let value of data) {
+      const q = query(collection(db, "merch_products"), where("productId", "==", value.id));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // console.log(doc.id, " => ", doc.data());
+        tempProducts.push(doc.data());
+        setLoading(false)
+      }
+      );
+    }
+    let total = 0;
+
+    for (let i = 0; i < tempProducts.length; i++) {
+      total = total + (tempProducts[i].price * data[i].count);
+    }
+    setProducts(tempProducts)
+    setTotalAmount(total)
+  }
 
   useEffect(() => {
+
     // console.log(currentUser)
     if (!!currentUser) {
       setIsLoggedIn(true)
       // console.log("is logged")
     }
-    fetchUserData()
+    fetchUserData()    
+    var cartItems = localStorage.getItem('cartsession');
+    var productList = JSON.parse(cartItems);
+    fecthData(productList)
+
+    if (componentMounted.current) {
+      setLoading(false)
+      setProductInfo(productList);
+    }
+    return () => {
+      componentMounted.current = false; //This worked for me
+    };
   }, [currentUser])
 
 
@@ -81,9 +120,9 @@ const Navbar = ({ cartCount }) => {
           </NavLink>
         </FlexContainer>
         <FlexContainer className="right-parts-links">
-        {
+          {
             isLoggedIn ? (
-              <div style={{ fontSize: '12px', marginRight: "20px", }} className="username">
+              <div className="username">
                 {` Hey there, ${username}`}
               </div>
             ) :
@@ -140,28 +179,43 @@ const Navbar = ({ cartCount }) => {
                 isCartTabShown ? "cart-tab" : "cart-tab cart-tab-closed"
               }
             >
-              <div className="cart-items-container">
-                  <div className="cart-item">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/nkululeko-store.appspot.com/o/products-downloads%2FPB52378%2Fbg-01.png?alt=media&token=24989883-4b7c-43c9-9ad9-7a09ccce986d" alt="sample" className="product-image" />
-                    <h5 className="product-name">Haybo this is a name</h5>
-                    <div className="delete-price">
-                        <FontAwesomeIcon className="delete-icon" icon={faTrash} />
-                        <h4 className="product-price">{`R109.25`}</h4>
+              {
+                loading ? (
+                  <Loader />
+                ) : (
+
+                  <>
+
+
+                    <div className="cart-items-container">
+                    {
+                      products.map((product, key) => {
+                        return  <div key={key} className="cart-item">
+                        <img src={product.thumbs[productInfo[key].color].url} alt="sample" className="product-image" />
+                        <h5 className="product-name">{product.name}</h5>
+                        <div className="delete-price">
+                          {/* <FontAwesomeIcon className="delete-icon" icon={faTrash} /> */}
+                          <h4 className="product-price">{`R${product.price}`}</h4>
+                        </div>
+                      </div>
+                      })
+                    }
+                     
                     </div>
-                  </div>
-              </div>
-              <div className="total">
-                <h3>{`Total: R200.55`}</h3>
-              </div>
-              <div className="btn-cart">
-                <Link className="btn" to="/checkout">
-                  <FontAwesomeIcon className="btn-icon" icon={faLock}/>
-                  Checkout</Link>
-                <Link  className="btn" to="/cart">
-                  <FontAwesomeIcon className="btn-icon" icon={faShoppingCart}/>
-                  Cart</Link>
-              </div>
-   
+                    <div className="total">
+                      <h3>{`Total: R${totalAmount}`}</h3>
+                    </div>
+                    <div className="btn-cart">
+                      <Link className="btn" to="/checkout/confirmation">
+                        <FontAwesomeIcon className="btn-icon" icon={faLock} />
+                        Checkout</Link>
+                      <Link className="btn" to="/cart">
+                        <FontAwesomeIcon className="btn-icon" icon={faShoppingCart} />
+                        Cart</Link>
+                    </div>
+                  </>
+                )
+              }
             </div>
           </div>
         </FlexContainer>

@@ -6,13 +6,21 @@ import { getAuth} from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
 import {getStorage} from 'firebase/storage';
 import {getDatabase} from 'firebase/database';
+import {axios} from 'axios'
 
+console.log("data")
+
+fetch("http://localhost:5001/nkululeko-store/us-central1/app", {mode: "no-cors"})
+.then((response) => {
+    console.log(response)
+})
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDqZZ98FjdW_US5jmXUJKjH3slgUmUB7f0",
     authDomain: "nkululeko-store.firebaseapp.com",
+    databaseURL: "https://nkululeko-store-default-rtdb.firebaseio.com",
     projectId: "nkululeko-store",
     storageBucket: "nkululeko-store.appspot.com",
     messagingSenderId: "483233806135",

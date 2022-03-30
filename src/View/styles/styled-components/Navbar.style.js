@@ -3,12 +3,11 @@ import {Colors} from "../Colors";
 
 const NavContainer = styled.nav `
 display: flex;
-justify-content: space-between;
 align-items: center;
 width: 100vw;
 height: 10vh;
 margin: 0;
-  font-size: 1.5em;
+padding: 0;
   text-align: center;
   color: ${Colors.darkblue};
   box-shadow: 0px 5px 10px 0px rgba(50,50,50,0.25);
@@ -19,13 +18,16 @@ margin: 0;
 
 const ContainerLarge = styled.div `
     padding: 0 5vw;
-    width: 100%;
+    width: 95%;
     height: 100%;
     margin: 0;
     display: flex;
     justify-content: space-between;
-align-items: center;
-position: relative;
+    align-items: center;
+    position: relative;
+    @media only screen and (max-width: 769px) {
+        padding: 0 3vw;
+    }
 
 `
 
@@ -35,9 +37,8 @@ const FlexContainer = styled.div `
     align-items: center;
 `;
 const Logo = styled.img `
-    width: 6rem;
+    width: 5rem;
     height: auto;
-    margin-left: 1rem;
 `;
 const SideBar = styled.div `
     width: 25rem;

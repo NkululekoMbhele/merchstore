@@ -28,6 +28,7 @@ import Cancel from '../../View/payments/Cancel'
 import Notify from '../../View/payments/Notify'
 
 import PushToDatabase from '../../Controller/PushToDatabase'
+import OrderItem from '../../View/screens/private/accountPages/OrderItem'
 
 const home = {
     path: "/",
@@ -113,6 +114,10 @@ const PrivateRoutes = [
     {
         path: "/checkout/:step",
         component: <Checkout / >
+    },
+    {
+        path: "/account/orders/:orderId",
+        component: <OrderItem / >
     },
 
 ]

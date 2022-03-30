@@ -5,6 +5,7 @@ import { Link, useParams, useLocation, useNavigate } from "react-router-dom"
 import './styles/Checkout.style.css'
 import Loader from '../../../Controller/Loader';
 import { collection, query, where, getDocs, doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
+import { useDocumentTitle } from '../../../Controller/useDocumentTitle';
 import { db } from '../../../Model/setup/firebase'
 import { AuthContext } from '../../../AuthProvider'
 import {
@@ -16,6 +17,7 @@ import {
 
 const Checkout = () => {
     const { step } = useParams()
+    useDocumentTitle("Checkout")
     switch (step) {
         case "confirmation":
             return (
@@ -302,53 +304,57 @@ function Delivery() {
 
 
                                     <div className={`enter-delivery-address ${!newAddress.showAddress && "hide"}`}>
-                                        <FormGroup>
+                                        <div className="form-group">
                                             <Label style={{ fontWeight: "bold", margin: "0.5rem 0" }}>
                                                 New Delivery Address
                                             </Label>
                                             <Label>Street Name/Number</Label>
-                                            <Input
+                                            <input
                                                 placeholder="Street name/Number"
                                                 value={toSend.street}
                                                 name="street"
                                                 type="text"
                                                 onChange={handleChange}
+                                                className="input"
                                             />
                                             {false && <Message>This is the validation message</Message>}
                                             <Label>Suburb</Label>
-                                            <Input
+                                            <input
                                                 placeholder="Suburb"
                                                 value={toSend.suburb}
                                                 name="suburb"
                                                 type="text"
                                                 onChange={handleChange}
+                                                className="input"
                                             />
                                             {false && <Message>This is the validation message</Message>}
-                                            <FormGroup style={{ display: 'flex' }}>
-                                                <FormGroup style={{ marginRight: '10px', width: '80%' }}>
+                                            <div className="form-group" style={{ display: 'flex' }}>
+                                                <div className="form-group" >
                                                     <Label>City</Label>
-                                                    <Input
+                                                    <input
                                                         placeholder="City"
                                                         value={toSend.city}
                                                         name="city"
                                                         type="text"
                                                         onChange={handleChange}
+                                                        className="input"
                                                     />
                                                     {false && <Message>This is the validation message</Message>}
-                                                </FormGroup>
-                                                <FormGroup style={{ width: '40%' }}>
+                                                </div>
+                                                <div className="form-group">
                                                     <Label>Postal Code</Label>
-                                                    <Input
+                                                    <input
                                                         placeholder="Postal Code"
                                                         value={toSend.PostalCode}
                                                         name="postalCode"
                                                         type="number"
                                                         onChange={handleChange}
+                                                        className="input"
                                                     />
                                                     {false && <Message>This is the validation message</Message>}
-                                                </FormGroup>
-                                            </FormGroup>
-                                        </FormGroup>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -465,6 +471,28 @@ function Payment() {
     )
 }
 function Successful() {
+    const currentUser = useContext(AuthContext)
+    const [products, setProducts] = useState([])
+    const [preOrderDetails, setPreOrderDetails] = useState({})
+    const [customerInfo, setCustomerInfo] = useState({})
+    const [productInfo, setProductInfo] = useState([])
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        fetchData()
+    }, [])
+    async function fetchData() {
+        const docRef = doc(db, "merch_preorders", currentUser.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            setPreOrderDetails(docSnap.data());
+            setLoading(false)
+            console.log("Document data:", docSnap.data());
+        } else {
+            setLoading(false)
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }
     return (
         <>
             <div className="checkout-successful">
@@ -477,30 +505,36 @@ function Successful() {
                     <hr className="seperator" />
                     <p className="active">Successful</p>
                 </div>
-                <div className="new-project-card">
-                    <div className="project-card-header">
-                        <h5>Payment Successful</h5>
-                    </div>
-                    <div className="new-project-card-body">
-                        <h4>Order Placed</h4>
-                        <p className="thank-you">Thank You For Placing Order Expect Your Items To Be Delivered Between 2 - 3 Weeks</p>
-                        <div className="order-info">
-                            <div className="order-id">
-                                 <p>orderId</p>
-                                 <h4>{`orderId`}</h4>
+                {
+                    loading ? (
+                        <Loader />
+                    ) : (
+                        <div className="new-project-card">
+                            <div className="project-card-header">
+                                <h5>Payment Successful</h5>
                             </div>
-                            <Link to={`/account/orders/orderId`} className="track-order">
-                                Track Order
-                            </Link>
-                        </div>
-                        <Link to="/" className="continue-shopping">
-                            Continue Shopping
-                        </Link>
-                    </div>
-                    <div className="project-card-footer">
+                            <div className="new-project-card-body">
+                                <h4>Order Placed</h4>
+                                <p className="thank-you">Thank You For Placing Order Expect Your Items To Be Delivered Between 1 - 2 Weeks</p>
+                                <div className="order-info">
+                                    <div className="order-id">
+                                        <p>orderId</p>
+                                        <h4>{`${preOrderDetails.orderId}`}</h4>
+                                    </div>
+                                    <Link to={`/account/orders/${preOrderDetails.orderId}`} className="track-order">
+                                        Track Order
+                                    </Link>
+                                </div>
+                                <Link to="/" className="continue-shopping">
+                                    Continue Shopping
+                                </Link>
+                            </div>
+                            <div className="project-card-footer">
 
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         </>
     )
